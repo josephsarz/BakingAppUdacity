@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.ui;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -21,6 +21,16 @@ import android.widget.ProgressBar;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.aghedo.bakingappudacity.MyIdlingResource;
+import com.example.aghedo.bakingappudacity.NewAppWidget;
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.adapter.AdapterClickListener;
+import com.example.aghedo.bakingappudacity.adapter.RecipesAdapter;
+import com.example.aghedo.bakingappudacity.model.IngredientModel;
+import com.example.aghedo.bakingappudacity.model.RecipeModel;
+import com.example.aghedo.bakingappudacity.model.StepModel;
+import com.example.aghedo.bakingappudacity.utils.NetworkUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

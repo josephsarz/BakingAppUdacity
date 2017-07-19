@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

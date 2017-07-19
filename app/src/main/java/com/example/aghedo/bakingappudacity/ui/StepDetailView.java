@@ -1,13 +1,17 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.fragments.StepDetailViewFragment;
+import com.example.aghedo.bakingappudacity.model.StepModel;
+
 import java.util.ArrayList;
 
-import static com.example.aghedo.bakingappudacity.RecipeDetailViewFragment.EXTRA_STEP_MODEL;
-import static com.example.aghedo.bakingappudacity.RecipeDetailViewFragment.POSITION;
+import static com.example.aghedo.bakingappudacity.fragments.RecipeDetailViewFragment.EXTRA_STEP_MODEL;
+import static com.example.aghedo.bakingappudacity.fragments.RecipeDetailViewFragment.POSITION;
 
 public class StepDetailView extends AppCompatActivity {
 

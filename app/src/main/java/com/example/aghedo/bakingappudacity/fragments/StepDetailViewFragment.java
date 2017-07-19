@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.model.StepModel;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayer;
@@ -33,9 +35,6 @@ import com.google.android.exoplayer2.util.Util;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
-import static com.example.aghedo.bakingappudacity.RecipeDetailViewFragment.EXTRA_STEP_MODEL;
-import static com.example.aghedo.bakingappudacity.RecipeDetailViewFragment.POSITION;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -78,9 +77,9 @@ public class StepDetailViewFragment extends Fragment implements ExoPlayer.EventL
 
         Bundle args = getArguments();
         if (args != null) {
-            currentPosition = args.getInt(POSITION);
-            maxPosition = args.getParcelableArrayList(EXTRA_STEP_MODEL).size();
-            arrayList = args.getParcelableArrayList(EXTRA_STEP_MODEL);
+            currentPosition = args.getInt(RecipeDetailViewFragment.POSITION);
+            maxPosition = args.getParcelableArrayList(RecipeDetailViewFragment.EXTRA_STEP_MODEL).size();
+            arrayList = args.getParcelableArrayList(RecipeDetailViewFragment.EXTRA_STEP_MODEL);
         }
 
         if (savedInstanceState != null) {

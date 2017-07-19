@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.model.RecipeModel;
 
 import java.util.ArrayList;
 

@@ -5,6 +5,9 @@ import android.support.test.espresso.IdlingResource;
 import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.example.aghedo.bakingappudacity.ui.MainActivity;
+import com.example.aghedo.bakingappudacity.ui.RecipeDetails;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

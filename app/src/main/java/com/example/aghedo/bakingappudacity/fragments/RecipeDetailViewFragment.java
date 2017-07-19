@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,14 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.adapter.AdapterClickListener;
+import com.example.aghedo.bakingappudacity.adapter.RecipeDetailViewAdapter;
+import com.example.aghedo.bakingappudacity.model.IngredientModel;
+import com.example.aghedo.bakingappudacity.model.RecipeModel;
+import com.example.aghedo.bakingappudacity.ui.MainActivity;
+import com.example.aghedo.bakingappudacity.ui.StepDetailView;
+
 import java.util.ArrayList;
 
-import static com.example.aghedo.bakingappudacity.RecipeDetails.twoPane;
+import static com.example.aghedo.bakingappudacity.ui.RecipeDetails.twoPane;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class RecipeDetailsFragment extends Fragment implements AdapterClickListener {
+public class RecipeDetailViewFragment extends Fragment implements AdapterClickListener {
 
     public static final String EXTRA_STEP_MODEL = "extra_step_model";
     public static final String POSITION = "position";
@@ -28,7 +36,7 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
     ArrayList<IngredientModel> ingredientModel = new ArrayList<>();
     private RecipeDetailViewAdapter adapter;
 
-    public RecipeDetailsFragment() {
+    public RecipeDetailViewFragment() {
     }
 
     @Override
@@ -71,7 +79,6 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
 
     @Override
     public void recyclerOnClick(int position) {
-
         //TODO: start StepDetailView Activity
 
         if (twoPane) {
@@ -95,4 +102,5 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
         }
 
     }
+
 }

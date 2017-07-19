@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -12,7 +12,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.http.GET;
 
 
-class NetworkUtils {
+public class NetworkUtils {
 
     final static String URL = "https://d17h27t6h515a5.cloudfront.net/";
 

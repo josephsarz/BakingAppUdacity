@@ -1,4 +1,4 @@
-package com.example.aghedo.bakingappudacity;
+package com.example.aghedo.bakingappudacity.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.aghedo.bakingappudacity.R;
+import com.example.aghedo.bakingappudacity.model.StepModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -18,12 +20,12 @@ public class RecipeDetailViewAdapter extends RecyclerView.Adapter<RecipeDetailVi
     ArrayList<StepModel> stepModelArrayList = new ArrayList<>();
     private Context context;
 
-    RecipeDetailViewAdapter(Context context, AdapterClickListener adapterClickListener) {
+    public RecipeDetailViewAdapter(Context context, AdapterClickListener adapterClickListener) {
         this.context = context;
         this.adapterClickListener = adapterClickListener;
     }
 
-    void setStepModel(ArrayList<StepModel> stepModelArrayList) {
+    public void setStepModel(ArrayList<StepModel> stepModelArrayList) {
         this.stepModelArrayList = stepModelArrayList;
         notifyDataSetChanged();
 

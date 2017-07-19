@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aghedo.bakingappudacity.RecipeDetailsFragment"
+    tools:context="com.example.aghedo.bakingappudacity.fragments.RecipeDetailsFragment"
     tools:showIn="@layout/activity_recipe_details">
 
     <RelativeLayout
