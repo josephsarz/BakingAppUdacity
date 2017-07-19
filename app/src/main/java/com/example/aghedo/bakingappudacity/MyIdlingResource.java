@@ -5,9 +5,6 @@ import android.support.test.espresso.IdlingResource;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created by idee on 7/1/17.
- */
 
 public class MyIdlingResource implements IdlingResource {
 
