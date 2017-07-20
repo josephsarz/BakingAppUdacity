@@ -20,6 +20,7 @@ public class RecipeModel implements Parcelable {
         }
     };
     String name;
+    String image;
     ArrayList<IngredientModel> ingredientModelArrayList = new ArrayList<>();
     ArrayList<StepModel> stepModelArrayList = new ArrayList<>();
 
@@ -28,6 +29,7 @@ public class RecipeModel implements Parcelable {
 
     protected RecipeModel(Parcel in) {
         name = in.readString();
+        image = in.readString();
         ingredientModelArrayList = in.createTypedArrayList(IngredientModel.CREATOR);
         stepModelArrayList = in.createTypedArrayList(StepModel.CREATOR);
     }
@@ -38,6 +40,14 @@ public class RecipeModel implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public ArrayList<IngredientModel> getIngredientModelArrayList() {
@@ -64,6 +74,7 @@ public class RecipeModel implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
+        dest.writeString(image);
         dest.writeTypedList(ingredientModelArrayList);
         dest.writeTypedList(stepModelArrayList);
     }

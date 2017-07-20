@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aghedo.bakingappudacity.R;
 import com.example.aghedo.bakingappudacity.model.RecipeModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -41,6 +43,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         RecipeModel model = arrayList.get(position);
         holder.recipeName.setText(model.getName());
 
+        String url = model.getImage();
+        if (!url.isEmpty()) {
+            Picasso.with(context)
+                    .load(url)
+                    .placeholder(R.drawable.no_image)
+                    .resize(50, 50)
+                    .centerCrop()
+                    .into(holder.recipeImage);
+        }
+
     }
 
     @Override
@@ -51,12 +63,14 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView recipeName;
+        ImageView recipeImage;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
             itemView.setOnClickListener(this);
             recipeName = (TextView) itemView.findViewById(R.id.tv_recipe_name);
+            recipeImage = (ImageView) itemView.findViewById(R.id.recipe_image);
 
         }
 

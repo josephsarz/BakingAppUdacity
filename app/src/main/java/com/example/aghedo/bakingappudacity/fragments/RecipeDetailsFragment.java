@@ -32,8 +32,11 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
     public static final String EXTRA_STEP_MODEL = "extra_step_model";
     public static final String POSITION = "position";
     RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
     RecipeModel model;
     ArrayList<IngredientModel> ingredientModel = new ArrayList<>();
+    int index = 0;
+    int top = 0;
     private RecipeDetailViewAdapter adapter;
 
     public RecipeDetailsFragment() {
@@ -48,7 +51,7 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
 
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_steps);
 
-        LinearLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
+        layoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.scrollToPosition(0);
         adapter = new RecipeDetailViewAdapter(getActivity(), this);
@@ -103,4 +106,22 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
         }
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        index = layoutManager.findFirstVisibleItemPosition();
+        View v = recyclerView.getChildAt(0);
+        top = (v == null) ? 0 : (v.getTop() - recyclerView.getPaddingTop());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //set recyclerview position
+        if (index != -1) {
+            layoutManager.scrollToPositionWithOffset(index, top);
+        }
+    }
+
 }

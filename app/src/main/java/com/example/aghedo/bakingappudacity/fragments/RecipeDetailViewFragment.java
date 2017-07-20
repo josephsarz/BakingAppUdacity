@@ -34,6 +34,9 @@ public class RecipeDetailViewFragment extends Fragment implements AdapterClickLi
     RecyclerView recyclerView;
     RecipeModel model;
     ArrayList<IngredientModel> ingredientModel = new ArrayList<>();
+    LinearLayoutManager layoutManager;
+    int index = 0;
+    int top = 0;
     private RecipeDetailViewAdapter adapter;
 
     public RecipeDetailViewFragment() {
@@ -48,7 +51,7 @@ public class RecipeDetailViewFragment extends Fragment implements AdapterClickLi
 
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_steps);
 
-        LinearLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
+        layoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.scrollToPosition(0);
         adapter = new RecipeDetailViewAdapter(getActivity(), this);
@@ -101,6 +104,23 @@ public class RecipeDetailViewFragment extends Fragment implements AdapterClickLi
             startActivity(new Intent(intent));
         }
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        index = layoutManager.findFirstVisibleItemPosition();
+        View v = recyclerView.getChildAt(0);
+        top = (v == null) ? 0 : (v.getTop() - recyclerView.getPaddingTop());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //set recyclerview position
+        if (index != -1) {
+            layoutManager.scrollToPositionWithOffset(index, top);
+        }
     }
 
 }

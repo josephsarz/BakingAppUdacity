@@ -172,6 +172,8 @@ public class MainActivity extends AppCompatActivity implements AdapterClickListe
 
                 RecipeModel model = new RecipeModel();
                 model.setName(object.getString("name"));
+                model.setImage(object.getString("image"));
+
 
                 ArrayList<IngredientModel> ingredientArrayList = new ArrayList<>();
                 JSONArray array1 = new JSONArray(object.getString("ingredients"));

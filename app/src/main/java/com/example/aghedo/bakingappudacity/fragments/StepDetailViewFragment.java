@@ -143,6 +143,7 @@ public class StepDetailViewFragment extends Fragment implements ExoPlayer.EventL
         if (arrayList.get(currentPosition).getThumbnailURL() != null)
             Picasso.with(getActivity())
                     .load("http://image.tmdb.org/t/p/w185/" + arrayList.get(currentPosition).getThumbnailURL())
+                    //.load(arrayList.get(currentPosition).getThumbnailURL())
                     .into(imageView);
 
         textView.setText(arrayList.get(currentPosition).getDescription());
