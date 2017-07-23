@@ -105,6 +105,7 @@ public class RecipeDetailsFragment extends Fragment implements AdapterClickListe
             startActivity(new Intent(intent));
         }
 
+
     }
 
     @Override

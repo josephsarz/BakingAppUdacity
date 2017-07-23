@@ -35,7 +35,11 @@ public class RecipeDetails extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getIdlingResource();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        twoPane = findViewById(R.id.fl_tablet_recipe_detail_view) != null;
+
+        if (findViewById(R.id.fl_tablet_recipe_detail_view) != null) {
+
+            twoPane = true;
+        }
     }
 
 }
